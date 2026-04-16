@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>King Baldwin Aura</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: #d4af37;
+            font-family: "Times New Roman", serif;
+            text-align: center;
+        }
+
+        .overlay {
+            background: url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da") no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.6); 
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: transparent;
+            border: 2px solid gold;
+            color: gold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: gold;
+            color: black;
+        }
+
+        #immagine {
+            display: none;
+            margin-top: 20px;
+            max-width: 100%;
+            border: 2px solid gold;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #immagine.show {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+    <div class="content">
+        <h1>KING BALDWIN IV</h1>
+        <p>"Un re non si giudica dal volto, ma dalla volontà."</p>
+        
+        <button class="btn" onclick="mostraImmagine()">Aura</button>
+
+        <br>
+        <img id="immagine" src="https://imgs.search.brave.com/S1UjV_oZfBxLUciLaIRnA1aUvIBxxbP68PEfUjKdw6U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/a2luZy1iYWxkd2lu/LWl2LWZyb20ta2lu/Z2RvbS1vZi1oZWF2/ZW4taXMtcG9zc2li/bHktdGhlLXYwLXht/ZWNjajl2cnEwZjEu/cG5nP3dpZHRoPTU1/OSZmb3JtYXQ9cG5n/JmF1dG89d2VicCZz/PWJjOGQ5M2VlOTI5/MmRiNmFiMzJiYzdh/ZjA5ZTM4NjUwZTMy/ZGJhYzI">
+    </div>
+</div>
+
+<script>
+function mostraImmagine() {
+    const img = document.getElementById("immagine");
+    img.classList.add("show");
+}
+</script>
+    
+</body>
+</html>
