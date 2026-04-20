@@ -11,6 +11,7 @@
             color: #d4af37;
             font-family: "Times New Roman", serif;
             text-align: center;
+            transition: background 0.5s;
         }
 
         .overlay {
@@ -65,6 +66,10 @@
             display: block;
             opacity: 1;
         }
+
+        .box {
+            margin-top: 15px;
+        }
     </style>
 </head>
 
@@ -72,10 +77,25 @@
 
 <div class="overlay">
     <div class="content">
-        <h1>KING BALDWIN IV</h1>
-        <p>"Un re non si giudica dal volto, ma dalla volontà."</p>
-        
+        <h1 id="titolo">KING BALDWIN IV</h1>
+        <p id="frase">"Un re non si giudica dal volto, ma dalla volontà."</p>
+
+        <!-- INPUT NOME -->
+        <input type="text" id="nome" placeholder="Scrivi il tuo nome">
+        <button class="btn" onclick="saluta()">Saluta</button>
+
+        <p id="saluto"></p>
+
+        <!-- CONTATORE -->
+        <div class="box">
+            <p>Contatore: <span id="contatore">0</span></p>
+            <button class="btn" onclick="meno()">-</button>
+            <button class="btn" onclick="piu()">+</button>
+        </div>
+
+        <!-- BOTTONI ORIGINALI -->
         <button class="btn" onclick="mostraImmagine()">Aura</button>
+        <button class="btn" onclick="cambiaSfondo()">Cambia sfondo</button>
 
         <br>
         <img id="immagine" src="https://imgs.search.brave.com/S1UjV_oZfBxLUciLaIRnA1aUvIBxxbP68PEfUjKdw6U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/a2luZy1iYWxkd2lu/LWl2LWZyb20ta2lu/Z2RvbS1vZi1oZWF2/ZW4taXMtcG9zc2li/bHktdGhlLXYwLXht/ZWNjajl2cnEwZjEu/cG5nP3dpZHRoPTU1/OSZmb3JtYXQ9cG5n/JmF1dG89d2VicCZz/PWJjOGQ5M2VlOTI5/MmRiNmFiMzJiYzdh/ZjA5ZTM4NjUwZTMy/ZGJhYzI">
@@ -83,11 +103,38 @@
 </div>
 
 <script>
+
+// mostra immagine
 function mostraImmagine() {
-    const img = document.getElementById("immagine");
-    img.classList.add("show");
+    document.getElementById("immagine").classList.add("show");
 }
+
+// contatore
+let count = 0;
+
+function piu() {
+    count++;
+    document.getElementById("contatore").innerHTML = count;
+}
+
+function meno() {
+    count--;
+    document.getElementById("contatore").innerHTML = count;
+}
+
+// saluto personalizzato
+function saluta() {
+    let nome = document.getElementById("nome").value;
+    document.getElementById("saluto").innerHTML = "Ciao " + nome + " 👑";
+}
+
+// cambia sfondo
+function cambiaSfondo() {
+    document.body.style.background = 
+        document.body.style.background === "black" ? "#1a1a1a" : "black";
+}
+
 </script>
-    
+
 </body>
 </html>
