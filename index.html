@@ -130,8 +130,9 @@ function saluta() {
 
 // cambia sfondo
 function cambiaSfondo() {
-    document.body.style.background = 
-        document.body.style.background === "black" ? "#1a1a1a" : "black";
+    let overlay = document.querySelector(".overlay");
+    overlay.style.background = 
+        overlay.style.background === "black" ? "#1a1a1a" : "black";
 }
 
 </script>
